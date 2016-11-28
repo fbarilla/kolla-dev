@@ -1,0 +1,546 @@
+Deploying Playbooks : ansible-playbook -i /usr/local/share/kolla/ansible/inventory/all-in-one -e @/etc/kolla/globals.yml -e @/etc/kolla/passwords.yml -e CONFIG_DIR=/etc/kolla  -e action=deploy /usr/local/share/kolla/ansible/site.yml  --verbose --verbose --verbose
+No config file found; using defaults
+
+PLAYBOOK: site.yml *************************************************************
+22 plays in /usr/local/share/kolla/ansible/site.yml
+
+PLAY [ceph-mon,ceph-osd,ceph-rgw] **********************************************
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798218.6-75648086284008 `" && echo ansible-tmp-1466798218.6-75648086284008="` echo $HOME/.ansible/tmp/ansible-tmp-1466798218.6-75648086284008 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp4K8ypZ TO /root/.ansible/tmp/ansible-tmp-1466798218.6-75648086284008/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798218.6-75648086284008/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798218.6-75648086284008/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : Registering common role has run] ********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:5
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [ceph : include] **********************************************************
+task path: /usr/local/share/kolla/ansible/roles/ceph/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+PLAY [elasticsearch] ***********************************************************
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798219.34-162775863280728 `" && echo ansible-tmp-1466798219.34-162775863280728="` echo $HOME/.ansible/tmp/ansible-tmp-1466798219.34-162775863280728 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpVxKkf_ TO /root/.ansible/tmp/ansible-tmp-1466798219.34-162775863280728/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798219.34-162775863280728/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798219.34-162775863280728/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : Registering common role has run] ********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:5
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [elasticsearch : include] *************************************************
+task path: /usr/local/share/kolla/ansible/roles/elasticsearch/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+PLAY [cinder-api,glance-api,haproxy,keystone,mariadb,iscsid,tgtd,murano-api,neutron-server,nova-api,rabbitmq,swift-proxy-server,heat-api,murano-api] ***
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798220.09-155443437409510 `" && echo ansible-tmp-1466798220.09-155443437409510="` echo $HOME/.ansible/tmp/ansible-tmp-1466798220.09-155443437409510 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpIgOVnM TO /root/.ansible/tmp/ansible-tmp-1466798220.09-155443437409510/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798220.09-155443437409510/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798220.09-155443437409510/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : Registering common role has run] ********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:5
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [haproxy : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/haproxy/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+PLAY [kibana] ******************************************************************
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798220.79-23070431188391 `" && echo ansible-tmp-1466798220.79-23070431188391="` echo $HOME/.ansible/tmp/ansible-tmp-1466798220.79-23070431188391 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp_WRNFM TO /root/.ansible/tmp/ansible-tmp-1466798220.79-23070431188391/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798220.79-23070431188391/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798220.79-23070431188391/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : Registering common role has run] ********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:5
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [kibana : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/kibana/tasks/main.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+PLAY [memcached] ***************************************************************
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798221.5-108935153750076 `" && echo ansible-tmp-1466798221.5-108935153750076="` echo $HOME/.ansible/tmp/ansible-tmp-1466798221.5-108935153750076 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpsLRDGv TO /root/.ansible/tmp/ansible-tmp-1466798221.5-108935153750076/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798221.5-108935153750076/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798221.5-108935153750076/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [memcached : include] *****************************************************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/main.yml:2
+included: /usr/local/share/kolla/ansible/roles/memcached/tasks/deploy.yml for localhost
+
+TASK [memcached : include] *****************************************************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/deploy.yml:2
+included: /usr/local/share/kolla/ansible/roles/memcached/tasks/config.yml for localhost
+
+TASK [memcached : Ensuring config directories exist] ***************************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/config.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798222.41-139464637333329 `" && echo ansible-tmp-1466798222.41-139464637333329="` echo $HOME/.ansible/tmp/ansible-tmp-1466798222.41-139464637333329 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpvJoVc6 TO /root/.ansible/tmp/ansible-tmp-1466798222.41-139464637333329/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798222.41-139464637333329/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798222.41-139464637333329/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=memcached) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//memcached"}, "before": {"path": "/etc/kolla//memcached"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/etc/kolla//memcached", "recurse": true, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "directory", "validate": null}, "module_name": "file"}, "item": "memcached", "mode": "0755", "owner": "root", "path": "/etc/kolla//memcached", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [memcached : Copying over config.json files for services] *****************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/config.yml:10
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771 `" && echo ansible-tmp-1466798222.8-30608205909771="` echo $HOME/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp85bMWc TO /root/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771/stat && sleep 0'
+<localhost> PUT /tmp/tmp0hIo76 TO /root/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798222.8-30608205909771/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=memcached) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//memcached/config.json"}, "before": {"path": "/etc/kolla//memcached/config.json"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//memcached/config.json", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "memcached.json.j2", "owner": null, "path": "/etc/kolla//memcached/config.json", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "memcached", "mode": "0644", "owner": "root", "path": "/etc/kolla//memcached/config.json", "size": 96, "state": "file", "uid": 0}
+
+TASK [memcached : include] *****************************************************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/deploy.yml:4
+included: /usr/local/share/kolla/ansible/roles/memcached/tasks/start.yml for localhost
+
+TASK [memcached : Starting memcached container] ********************************
+task path: /usr/local/share/kolla/ansible/roles/memcached/tasks/start.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798223.59-236891532106248 `" && echo ansible-tmp-1466798223.59-236891532106248="` echo $HOME/.ansible/tmp/ansible-tmp-1466798223.59-236891532106248 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpg4peFt TO /root/.ansible/tmp/ansible-tmp-1466798223.59-236891532106248/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798223.59-236891532106248/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798223.59-236891532106248/" > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {"changed": true, "invocation": {"module_args": {"action": "start_container", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS", "KOLLA_SERVICE_NAME": "memcached"}, "image": "192.168.128.115:4000/kollaglue/ubuntu-source-memcached:2.0.0", "ipc_mode": null, "labels": {}, "name": "memcached", "pid_mode": null, "privileged": false, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": ["/etc/kolla//memcached/:/var/lib/kolla/config_files/:ro", "/etc/localtime:/etc/localtime:ro"], "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+PLAY [mariadb] *****************************************************************
+
+TASK [setup] *******************************************************************
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798225.26-64053477084331 `" && echo ansible-tmp-1466798225.26-64053477084331="` echo $HOME/.ansible/tmp/ansible-tmp-1466798225.26-64053477084331 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpwBB2cy TO /root/.ansible/tmp/ansible-tmp-1466798225.26-64053477084331/setup
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798225.26-64053477084331/setup; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798225.26-64053477084331/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:2
+included: /usr/local/share/kolla/ansible/roles/common/tasks/deploy.yml for localhost
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/deploy.yml:2
+included: /usr/local/share/kolla/ansible/roles/common/tasks/config.yml for localhost
+
+TASK [common : Ensuring config directories exist] ******************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/config.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.14-213889816242335 `" && echo ansible-tmp-1466798226.14-213889816242335="` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.14-213889816242335 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpQuO9Oy TO /root/.ansible/tmp/ansible-tmp-1466798226.14-213889816242335/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798226.14-213889816242335/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798226.14-213889816242335/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=heka) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka"}, "before": {"path": "/etc/kolla//heka"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/etc/kolla//heka", "recurse": true, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "directory", "validate": null}, "module_name": "file"}, "item": "heka", "mode": "0755", "owner": "root", "path": "/etc/kolla//heka", "size": 4096, "state": "directory", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.47-87328842275629 `" && echo ansible-tmp-1466798226.47-87328842275629="` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.47-87328842275629 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpMeOZev TO /root/.ansible/tmp/ansible-tmp-1466798226.47-87328842275629/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798226.47-87328842275629/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798226.47-87328842275629/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=cron) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron"}, "before": {"path": "/etc/kolla//cron"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/etc/kolla//cron", "recurse": true, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "directory", "validate": null}, "module_name": "file"}, "item": "cron", "mode": "0755", "owner": "root", "path": "/etc/kolla//cron", "size": 4096, "state": "directory", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.75-13356377539515 `" && echo ansible-tmp-1466798226.75-13356377539515="` echo $HOME/.ansible/tmp/ansible-tmp-1466798226.75-13356377539515 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpIZqUts TO /root/.ansible/tmp/ansible-tmp-1466798226.75-13356377539515/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798226.75-13356377539515/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798226.75-13356377539515/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=cron/logrotate) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate"}, "before": {"path": "/etc/kolla//cron/logrotate"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/etc/kolla//cron/logrotate", "recurse": true, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "directory", "validate": null}, "module_name": "file"}, "item": "cron/logrotate", "mode": "0755", "owner": "root", "path": "/etc/kolla//cron/logrotate", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [common : Copying over config.json files for services] ********************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/config.yml:12
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111 `" && echo ansible-tmp-1466798227.16-194555269014111="` echo $HOME/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpLNbdrZ TO /root/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111/stat && sleep 0'
+<localhost> PUT /tmp/tmpZP9Yg2 TO /root/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798227.16-194555269014111/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=heka) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/config.json"}, "before": {"path": "/etc/kolla//heka/config.json"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/config.json", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka.json.j2", "owner": null, "path": "/etc/kolla//heka/config.json", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "heka", "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/config.json", "size": 5829, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063 `" && echo ansible-tmp-1466798227.64-132717511492063="` echo $HOME/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpaeGEqb TO /root/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063/stat && sleep 0'
+<localhost> PUT /tmp/tmpRKh5a8 TO /root/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798227.64-132717511492063/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=cron) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/config.json"}, "before": {"path": "/etc/kolla//cron/config.json"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/config.json", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron.json.j2", "owner": null, "path": "/etc/kolla//cron/config.json", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "cron", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/config.json", "size": 3517, "state": "file", "uid": 0}
+
+TASK [common : Copying over heka config files] *********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/config.yml:20
+skipping: [localhost] => (item={u'enabled': u'no', u'name': u'elasticsearch'})  => {"changed": false, "item": {"enabled": "no", "name": "elasticsearch"}, "skip_reason": "Conditional check failed", "skipped": true}
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593 `" && echo ansible-tmp-1466798228.32-46438004078593="` echo $HOME/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpK8qIt6 TO /root/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593/stat && sleep 0'
+<localhost> PUT /tmp/tmpbZgfEI TO /root/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798228.32-46438004078593/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'global'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-global.toml"}, "before": {"path": "/etc/kolla//heka/heka-global.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-global.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-global.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-global.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "global"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-global.toml", "size": 655, "state": "file", "uid": 0}
+skipping: [localhost] => (item={u'enabled': u'no', u'name': u'haproxy'})  => {"changed": false, "item": {"enabled": "no", "name": "haproxy"}, "skip_reason": "Conditional check failed", "skipped": true}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094 `" && echo ansible-tmp-1466798228.95-141807332902094="` echo $HOME/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpZybuQ6 TO /root/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094/stat && sleep 0'
+<localhost> PUT /tmp/tmp7DTGvL TO /root/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798228.95-141807332902094/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'horizon'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-horizon.toml"}, "before": {"path": "/etc/kolla//heka/heka-horizon.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-horizon.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-horizon.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-horizon.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "horizon"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-horizon.toml", "size": 537, "state": "file", "uid": 0}
+skipping: [localhost] => (item={u'enabled': u'no', u'name': u'keepalived'})  => {"changed": false, "item": {"enabled": "no", "name": "keepalived"}, "skip_reason": "Conditional check failed", "skipped": true}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793 `" && echo ansible-tmp-1466798229.52-234601239076793="` echo $HOME/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpkMWumL TO /root/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793/stat && sleep 0'
+<localhost> PUT /tmp/tmp_5peBc TO /root/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798229.52-234601239076793/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'keystone'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-keystone.toml"}, "before": {"path": "/etc/kolla//heka/heka-keystone.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-keystone.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-keystone.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-keystone.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "keystone"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-keystone.toml", "size": 545, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442 `" && echo ansible-tmp-1466798230.01-231867685714442="` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpaM97dZ TO /root/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442/stat && sleep 0'
+<localhost> PUT /tmp/tmplIBzRn TO /root/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798230.01-231867685714442/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'mariadb'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-mariadb.toml"}, "before": {"path": "/etc/kolla//heka/heka-mariadb.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-mariadb.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-mariadb.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-mariadb.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "mariadb"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-mariadb.toml", "size": 310, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002 `" && echo ansible-tmp-1466798230.48-183970056603002="` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpmYi9K1 TO /root/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002/stat && sleep 0'
+<localhost> PUT /tmp/tmpq6ChpJ TO /root/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798230.48-183970056603002/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'openstack'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-openstack.toml"}, "before": {"path": "/etc/kolla//heka/heka-openstack.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-openstack.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-openstack.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-openstack.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "openstack"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-openstack.toml", "size": 424, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346 `" && echo ansible-tmp-1466798230.96-142615004462346="` echo $HOME/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpjoln0e TO /root/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346/stat && sleep 0'
+<localhost> PUT /tmp/tmppVVgFi TO /root/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798230.96-142615004462346/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item={u'enabled': u'yes', u'name': u'rabbitmq'}) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//heka/heka-rabbitmq.toml"}, "before": {"path": "/etc/kolla//heka/heka-rabbitmq.toml"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//heka/heka-rabbitmq.toml", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "heka-rabbitmq.toml.j2", "owner": null, "path": "/etc/kolla//heka/heka-rabbitmq.toml", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": {"enabled": "yes", "name": "rabbitmq"}, "mode": "0644", "owner": "root", "path": "/etc/kolla//heka/heka-rabbitmq.toml", "size": 499, "state": "file", "uid": 0}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-account-auditor'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-account-auditor", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-account-reaper'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-account-reaper", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-account-replicator'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-account-replicator", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-account-server'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-account-server", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-container-auditor'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-container-auditor", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-container-replicator'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-container-replicator", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-container-server'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-container-server", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-container-updater'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-container-updater", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-object-auditor'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-object-auditor", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-object-expirer'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-object-expirer", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-object-replicator'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-object-replicator", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-object-server'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-object-server", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-object-updater'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-object-updater", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-proxy-server'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-proxy-server", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+skipping: [localhost] => (item={u'src': u'swift', u'enabled': u'no', u'name': u'swift-rsyncd'})  => {"changed": false, "item": {"enabled": "no", "name": "swift-rsyncd", "src": "swift"}, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : Copying over cron logrotate config files] ***********************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/config.yml:51
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584 `" && echo ansible-tmp-1466798232.91-153385582042584="` echo $HOME/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpcjFd6f TO /root/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584/stat && sleep 0'
+<localhost> PUT /tmp/tmp1fdhfu TO /root/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798232.91-153385582042584/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=ansible) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/ansible.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/ansible.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/ansible.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-ansible.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/ansible.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "ansible", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/ansible.conf", "size": 33, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591 `" && echo ansible-tmp-1466798233.4-145354072538591="` echo $HOME/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp1GoOGP TO /root/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591/stat && sleep 0'
+<localhost> PUT /tmp/tmpOvTXG4 TO /root/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798233.4-145354072538591/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=cinder) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/cinder.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/cinder.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/cinder.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-cinder.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/cinder.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "cinder", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/cinder.conf", "size": 34, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838 `" && echo ansible-tmp-1466798233.89-145789203674838="` echo $HOME/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838 `" ) && sleep 0'
+<localhost> PUT /tmp/tmprZVuG6 TO /root/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838/stat && sleep 0'
+<localhost> PUT /tmp/tmpkuubjk TO /root/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798233.89-145789203674838/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=glance) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/glance.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/glance.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/glance.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-glance.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/glance.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "glance", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/glance.conf", "size": 34, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530 `" && echo ansible-tmp-1466798234.37-2333495755530="` echo $HOME/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpFBm854 TO /root/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530/stat && sleep 0'
+<localhost> PUT /tmp/tmph6QIKv TO /root/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798234.37-2333495755530/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=global) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/global.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/global.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/global.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-global.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/global.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "global", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/global.conf", "size": 147, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869 `" && echo ansible-tmp-1466798234.84-262422309144869="` echo $HOME/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp3cL7e2 TO /root/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869/stat && sleep 0'
+<localhost> PUT /tmp/tmpmEzqVc TO /root/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798234.84-262422309144869/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=haproxy) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/haproxy.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/haproxy.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/haproxy.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-haproxy.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/haproxy.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "haproxy", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/haproxy.conf", "size": 41, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880 `" && echo ansible-tmp-1466798235.33-198014478512880="` echo $HOME/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpxbCwGq TO /root/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880/stat && sleep 0'
+<localhost> PUT /tmp/tmpLSyPQX TO /root/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798235.33-198014478512880/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=heat) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/heat.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/heat.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/heat.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-heat.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/heat.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "heat", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/heat.conf", "size": 32, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632 `" && echo ansible-tmp-1466798235.81-29843166690632="` echo $HOME/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpJ7WFg8 TO /root/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632/stat && sleep 0'
+<localhost> PUT /tmp/tmpwburHd TO /root/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798235.81-29843166690632/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=keepalived) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/keepalived.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/keepalived.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/keepalived.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-keepalived.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/keepalived.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "keepalived", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/keepalived.conf", "size": 47, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768 `" && echo ansible-tmp-1466798236.3-99766100668768="` echo $HOME/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768 `" ) && sleep 0'
+<localhost> PUT /tmp/tmphv96cw TO /root/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768/stat && sleep 0'
+<localhost> PUT /tmp/tmpV8JZ2H TO /root/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798236.3-99766100668768/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=keystone) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/keystone.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/keystone.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/keystone.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-keystone.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/keystone.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "keystone", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/keystone.conf", "size": 36, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605 `" && echo ansible-tmp-1466798236.77-129653974218605="` echo $HOME/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpuLwYEc TO /root/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605/stat && sleep 0'
+<localhost> PUT /tmp/tmp0ku7K9 TO /root/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798236.77-129653974218605/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=magnum) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/magnum.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/magnum.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/magnum.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-magnum.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/magnum.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "magnum", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/magnum.conf", "size": 34, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647 `" && echo ansible-tmp-1466798237.26-58689489515647="` echo $HOME/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp7rQGnt TO /root/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647/stat && sleep 0'
+<localhost> PUT /tmp/tmp0FiHr9 TO /root/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798237.26-58689489515647/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=manila) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/manila.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/manila.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/manila.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-manila.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/manila.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "manila", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/manila.conf", "size": 34, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643 `" && echo ansible-tmp-1466798237.73-219445589623643="` echo $HOME/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpqMTy3E TO /root/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643/stat && sleep 0'
+<localhost> PUT /tmp/tmpphG34y TO /root/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798237.73-219445589623643/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mariadb) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/mariadb.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/mariadb.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/mariadb.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-mariadb.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/mariadb.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "mariadb", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/mariadb.conf", "size": 35, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406 `" && echo ansible-tmp-1466798238.22-92690412976406="` echo $HOME/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpEbhls0 TO /root/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406/stat && sleep 0'
+<localhost> PUT /tmp/tmpzLPr9A TO /root/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798238.22-92690412976406/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mistral) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/mistral.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/mistral.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/mistral.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-mistral.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/mistral.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "mistral", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/mistral.conf", "size": 35, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667 `" && echo ansible-tmp-1466798238.69-222392008394667="` echo $HOME/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpvrBVI1 TO /root/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667/stat && sleep 0'
+<localhost> PUT /tmp/tmpOGyqWI TO /root/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798238.69-222392008394667/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=murano) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/murano.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/murano.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/murano.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-murano.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/murano.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "murano", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/murano.conf", "size": 34, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393 `" && echo ansible-tmp-1466798239.17-115226885262393="` echo $HOME/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpi9w4lt TO /root/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393/stat && sleep 0'
+<localhost> PUT /tmp/tmp5D9hHq TO /root/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798239.17-115226885262393/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=neutron) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/neutron.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/neutron.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/neutron.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-neutron.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/neutron.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "neutron", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/neutron.conf", "size": 35, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453 `" && echo ansible-tmp-1466798239.64-73380862185453="` echo $HOME/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpRk_wUE TO /root/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453/stat && sleep 0'
+<localhost> PUT /tmp/tmpaTNxFw TO /root/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798239.64-73380862185453/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=nova) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/nova.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/nova.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/nova.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-nova.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/nova.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "nova", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/nova.conf", "size": 32, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578 `" && echo ansible-tmp-1466798240.12-212616193966578="` echo $HOME/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpeza1r2 TO /root/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578/stat && sleep 0'
+<localhost> PUT /tmp/tmp4hwCyW TO /root/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798240.12-212616193966578/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=rabbitmq) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/rabbitmq.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/rabbitmq.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/rabbitmq.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-rabbitmq.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/rabbitmq.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "rabbitmq", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/rabbitmq.conf", "size": 36, "state": "file", "uid": 0}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140 `" && echo ansible-tmp-1466798240.59-85066919186140="` echo $HOME/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpL7GSb0 TO /root/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140/stat && sleep 0'
+<localhost> PUT /tmp/tmpMpzKIk TO /root/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798240.59-85066919186140/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=swift) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//cron/logrotate/swift.conf"}, "before": {"path": "/etc/kolla//cron/logrotate/swift.conf"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//cron/logrotate/swift.conf", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "cron-logrotate-swift.conf.j2", "owner": null, "path": "/etc/kolla//cron/logrotate/swift.conf", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "swift", "mode": "0644", "owner": "root", "path": "/etc/kolla//cron/logrotate/swift.conf", "size": 33, "state": "file", "uid": 0}
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/deploy.yml:4
+included: /usr/local/share/kolla/ansible/roles/common/tasks/bootstrap.yml for localhost
+
+TASK [common : Creating log volume] ********************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/bootstrap.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798241.25-88289556355303 `" && echo ansible-tmp-1466798241.25-88289556355303="` echo $HOME/.ansible/tmp/ansible-tmp-1466798241.25-88289556355303 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpfu1H7C TO /root/.ansible/tmp/ansible-tmp-1466798241.25-88289556355303/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798241.25-88289556355303/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798241.25-88289556355303/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {"changed": false, "invocation": {"module_args": {"action": "create_volume", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS"}, "image": null, "ipc_mode": null, "labels": {}, "name": "kolla_logs", "pid_mode": null, "privileged": false, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": null, "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+TASK [common : Starting heka bootstrap container] ******************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/bootstrap.yml:9
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+
+TASK [common : include] ********************************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/deploy.yml:6
+included: /usr/local/share/kolla/ansible/roles/common/tasks/start.yml for localhost
+
+TASK [common : Starting heka container] ****************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/start.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798241.86-27079982919684 `" && echo ansible-tmp-1466798241.86-27079982919684="` echo $HOME/.ansible/tmp/ansible-tmp-1466798241.86-27079982919684 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpHxeZxL TO /root/.ansible/tmp/ansible-tmp-1466798241.86-27079982919684/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798241.86-27079982919684/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798241.86-27079982919684/" > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {"changed": true, "invocation": {"module_args": {"action": "start_container", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS", "KOLLA_SERVICE_NAME": "heka", "SKIP_LOG_SETUP": "true"}, "image": "192.168.128.115:4000/kollaglue/ubuntu-source-heka:2.0.0", "ipc_mode": null, "labels": {}, "name": "heka", "pid_mode": null, "privileged": false, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": ["/etc/kolla//heka/:/var/lib/kolla/config_files/:ro", "/etc/localtime:/etc/localtime:ro", "kolla_logs:/var/log/kolla/", "heka:/var/cache/hekad", "heka_socket:/var/lib/kolla/heka/"], "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+TASK [common : Starting kolla-toolbox container] *******************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/start.yml:18
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798243.58-255417334400689 `" && echo ansible-tmp-1466798243.58-255417334400689="` echo $HOME/.ansible/tmp/ansible-tmp-1466798243.58-255417334400689 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpsDy9zo TO /root/.ansible/tmp/ansible-tmp-1466798243.58-255417334400689/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798243.58-255417334400689/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798243.58-255417334400689/" > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {"changed": true, "invocation": {"module_args": {"action": "start_container", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"ANSIBLE_LIBRARY": "/usr/share/ansible", "ANSIBLE_NOCOLOR": "1", "KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS", "KOLLA_SERVICE_NAME": "kolla-toolbox"}, "image": "192.168.128.115:4000/kollaglue/ubuntu-source-kolla-toolbox:2.0.0", "ipc_mode": null, "labels": {}, "name": "kolla_toolbox", "pid_mode": null, "privileged": true, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": ["/etc/localtime:/etc/localtime:ro", "/dev/:/dev/", "/run/:/run/", "kolla_logs:/var/log/kolla/"], "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+TASK [common : Starting cron container] ****************************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/start.yml:34
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798245.32-236094493860274 `" && echo ansible-tmp-1466798245.32-236094493860274="` echo $HOME/.ansible/tmp/ansible-tmp-1466798245.32-236094493860274 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpsBLamy TO /root/.ansible/tmp/ansible-tmp-1466798245.32-236094493860274/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798245.32-236094493860274/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798245.32-236094493860274/" > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {"changed": true, "invocation": {"module_args": {"action": "start_container", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS", "KOLLA_SERVICE_NAME": "cron"}, "image": "192.168.128.115:4000/kollaglue/ubuntu-source-cron:2.0.0", "ipc_mode": null, "labels": {}, "name": "cron", "pid_mode": null, "privileged": false, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": ["/etc/kolla//cron/:/var/lib/kolla/config_files/:ro", "/etc/localtime:/etc/localtime:ro", "heka_socket:/var/lib/kolla/heka/", "kolla_logs:/var/log/kolla/"], "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+TASK [common : Registering common role has run] ********************************
+task path: /usr/local/share/kolla/ansible/roles/common/tasks/main.yml:5
+ok: [localhost] => {"ansible_facts": {"common_run": true}, "changed": false, "invocation": {"module_args": {"common_run": true}, "module_name": "set_fact"}}
+
+TASK [mariadb : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/main.yml:2
+included: /usr/local/share/kolla/ansible/roles/mariadb/tasks/deploy.yml for localhost
+
+TASK [mariadb : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/deploy.yml:2
+included: /usr/local/share/kolla/ansible/roles/mariadb/tasks/config.yml for localhost
+
+TASK [mariadb : Ensuring config directories exist] *****************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/config.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798247.28-59863043598201 `" && echo ansible-tmp-1466798247.28-59863043598201="` echo $HOME/.ansible/tmp/ansible-tmp-1466798247.28-59863043598201 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpCtr9iF TO /root/.ansible/tmp/ansible-tmp-1466798247.28-59863043598201/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798247.28-59863043598201/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798247.28-59863043598201/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mariadb) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//mariadb"}, "before": {"path": "/etc/kolla//mariadb"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/etc/kolla//mariadb", "recurse": true, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "directory", "validate": null}, "module_name": "file"}, "item": "mariadb", "mode": "0755", "owner": "root", "path": "/etc/kolla//mariadb", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [mariadb : Copying over config.json files for services] *******************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/config.yml:10
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181 `" && echo ansible-tmp-1466798247.65-156018752180181="` echo $HOME/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpZYqE3N TO /root/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181/stat && sleep 0'
+<localhost> PUT /tmp/tmpNZYm8H TO /root/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798247.65-156018752180181/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mariadb) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//mariadb/config.json"}, "before": {"path": "/etc/kolla//mariadb/config.json"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//mariadb/config.json", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "mariadb.json.j2", "owner": null, "path": "/etc/kolla//mariadb/config.json", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "mariadb", "mode": "0644", "owner": "root", "path": "/etc/kolla//mariadb/config.json", "size": 454, "state": "file", "uid": 0}
+
+TASK [mariadb : Copying over galera.cnf] ***************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/config.yml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861 `" && echo ansible-tmp-1466798248.22-225355584394861="` echo $HOME/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpIaPuv9 TO /root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/src
+<localhost> PUT /tmp/tmp9FEOas TO /root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/copy
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/copy; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mariadb) => {"changed": false, "checksum": "c9282375be13fcf37fcd2262d66e8da5731785b8", "dest": "/etc/kolla//mariadb/galera.cnf", "gid": 0, "group": "root", "invocation": {"module_args": {"backup": false, "content": null, "delimiter": null, "dest": "/etc/kolla//mariadb/galera.cnf", "directory_mode": null, "follow": false, "force": true, "group": null, "mode": null, "original_basename": null, "owner": null, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": "/root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/src", "validate": null}}, "item": "mariadb", "md5sum": "885b47037519cb2a7c24446a05250a95", "mode": "0644", "owner": "root", "size": 790, "src": "/root/.ansible/tmp/ansible-tmp-1466798248.22-225355584394861/src", "state": "file", "uid": 0}
+
+TASK [mariadb : Copying over wsrep_notify.sh] **********************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/config.yml:29
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577 `" && echo ansible-tmp-1466798248.74-152440356747577="` echo $HOME/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp9XVmij TO /root/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577/stat && sleep 0'
+<localhost> PUT /tmp/tmp0WblAb TO /root/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577/file && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1466798248.74-152440356747577/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=mariadb) => {"changed": false, "diff": {"after": {"path": "/etc/kolla//mariadb/wsrep_notify.sh"}, "before": {"path": "/etc/kolla//mariadb/wsrep_notify.sh"}}, "gid": 0, "group": "root", "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "dest": "/etc/kolla//mariadb/wsrep_notify.sh", "diff_peek": null, "directory_mode": null, "follow": true, "force": false, "group": null, "mode": null, "original_basename": "wsrep_notify.sh.j2", "owner": null, "path": "/etc/kolla//mariadb/wsrep_notify.sh", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": null, "validate": null}}, "item": "mariadb", "mode": "0644", "owner": "root", "path": "/etc/kolla//mariadb/wsrep_notify.sh", "size": 1410, "state": "file", "uid": 0}
+
+TASK [mariadb : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/deploy.yml:4
+included: /usr/local/share/kolla/ansible/roles/mariadb/tasks/bootstrap.yml for localhost
+
+TASK [mariadb : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/bootstrap.yml:2
+included: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml for localhost
+
+TASK [mariadb : Cleaning up temp file on localhost] ****************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798249.65-199301361340487 `" && echo ansible-tmp-1466798249.65-199301361340487="` echo $HOME/.ansible/tmp/ansible-tmp-1466798249.65-199301361340487 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpaQl1n9 TO /root/.ansible/tmp/ansible-tmp-1466798249.65-199301361340487/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798249.65-199301361340487/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798249.65-199301361340487/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost -> localhost] => {"changed": false, "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/tmp/kolla_mariadb_cluster", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "absent", "validate": null}, "module_name": "file"}, "path": "/tmp/kolla_mariadb_cluster", "state": "absent"}
+
+TASK [mariadb : Creating temp file on localhost] *******************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:8
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.02-109488729138514 `" && echo ansible-tmp-1466798250.02-109488729138514="` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.02-109488729138514 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpcNMdIv TO /root/.ansible/tmp/ansible-tmp-1466798250.02-109488729138514/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798250.02-109488729138514/stat; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798250.02-109488729138514/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108 `" && echo ansible-tmp-1466798250.22-269393982620108="` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108 `" ) && sleep 0'
+<localhost> PUT /tmp/tmphZ9jdH TO /root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/source
+<localhost> PUT /tmp/tmpOhyuV7 TO /root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/copy
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/copy; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost -> localhost] => {"changed": false, "checksum": "6eef6648406c333a4035cd5e60d0bf2ecf2606d7", "dest": "/tmp/kolla_mariadb_cluster", "gid": 0, "group": "root", "invocation": {"module_args": {"backup": false, "content": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "delimiter": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "dest": "/tmp/kolla_mariadb_cluster", "directory_mode": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "follow": false, "force": true, "group": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "mode": "0600", "original_basename": "tmphZ9jdH", "owner": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "regexp": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "remote_src": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "selevel": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "serole": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "setype": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "seuser": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "src": "/root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/source", "validate": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"}}, "md5sum": "6adf97f83acf6453d4a6a4b1070f3754", "mode": "0600", "owner": "root", "size": 4, "src": "/root/.ansible/tmp/ansible-tmp-1466798250.22-269393982620108/source", "state": "file", "uid": 0}
+
+TASK [mariadb : Creating mariadb volume] ***************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:14
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.59-80461655004646 `" && echo ansible-tmp-1466798250.59-80461655004646="` echo $HOME/.ansible/tmp/ansible-tmp-1466798250.59-80461655004646 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpbWzgXc TO /root/.ansible/tmp/ansible-tmp-1466798250.59-80461655004646/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798250.59-80461655004646/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798250.59-80461655004646/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {"changed": false, "invocation": {"module_args": {"action": "create_volume", "api_version": "auto", "auth_email": null, "auth_password": null, "auth_registry": "192.168.128.115:4000", "auth_username": null, "cap_add": [], "detach": true, "environment": {"KOLLA_CONFIG_STRATEGY": "COPY_ALWAYS"}, "image": null, "ipc_mode": null, "labels": {}, "name": "mariadb", "pid_mode": null, "privileged": false, "remove_on_exit": true, "restart_policy": "always", "restart_retries": 10, "security_opt": [], "tls_cacert": null, "tls_cert": null, "tls_key": null, "tls_verify": false, "volumes": null, "volumes_from": null}, "module_name": "kolla_docker"}, "result": false}
+
+TASK [mariadb : Writing hostname of host with existing cluster files to temp file] ***
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:21
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.05-151921999118349 `" && echo ansible-tmp-1466798251.05-151921999118349="` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.05-151921999118349 `" ) && sleep 0'
+<localhost> PUT /tmp/tmp5dlq7Q TO /root/.ansible/tmp/ansible-tmp-1466798251.05-151921999118349/stat
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798251.05-151921999118349/stat; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798251.05-151921999118349/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223 `" && echo ansible-tmp-1466798251.23-254918576208223="` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpQ91iAG TO /root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/source
+<localhost> PUT /tmp/tmpV6Wqhv TO /root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/copy
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/copy; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost -> localhost] => {"changed": false, "checksum": "7d740f0f0966483e6de44b4201772be3997ce196", "dest": "/tmp/kolla_mariadb_cluster", "gid": 0, "group": "root", "invocation": {"module_args": {"backup": false, "content": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "delimiter": null, "dest": "/tmp/kolla_mariadb_cluster", "directory_mode": null, "follow": false, "force": true, "group": null, "mode": "0600", "original_basename": "tmpQ91iAG", "owner": null, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": "/root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/source", "validate": null}}, "md5sum": "df1ef79b05ebd4d4c4420d4c573ec17a", "mode": "0600", "owner": "root", "size": 9, "src": "/root/.ansible/tmp/ansible-tmp-1466798251.23-254918576208223/source", "state": "file", "uid": 0}
+
+TASK [mariadb : Registering host from temp file] *******************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:27
+ok: [localhost] => {"ansible_facts": {"delegate_host": "Hnode3-11"}, "changed": false, "invocation": {"module_args": {"delegate_host": "Hnode3-11"}, "module_name": "set_fact"}}
+
+TASK [mariadb : Cleaning up temp file on localhost] ****************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/lookup_cluster.yml:31
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.8-93273554619511 `" && echo ansible-tmp-1466798251.8-93273554619511="` echo $HOME/.ansible/tmp/ansible-tmp-1466798251.8-93273554619511 `" ) && sleep 0'
+<localhost> PUT /tmp/tmprwFZEe TO /root/.ansible/tmp/ansible-tmp-1466798251.8-93273554619511/file
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798251.8-93273554619511/file; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798251.8-93273554619511/" > /dev/null 2>&1 && sleep 0'
+ok: [localhost -> localhost] => {"changed": false, "diff": {"after": {"path": "/tmp/kolla_mariadb_cluster", "state": "absent"}, "before": {"path": "/tmp/kolla_mariadb_cluster", "state": "file"}}, "invocation": {"module_args": {"backup": null, "content": null, "delimiter": null, "diff_peek": null, "directory_mode": null, "follow": false, "force": false, "group": null, "mode": null, "original_basename": null, "owner": null, "path": "/tmp/kolla_mariadb_cluster", "recurse": false, "regexp": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": null, "state": "absent", "validate": null}, "module_name": "file"}, "path": "/tmp/kolla_mariadb_cluster", "state": "absent"}
+
+TASK [mariadb : include] *******************************************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/bootstrap.yml:4
+included: /usr/local/share/kolla/ansible/roles/mariadb/tasks/bootstrap_cluster.yml for localhost
+
+TASK [mariadb : Running MariaDB bootstrap container] ***************************
+task path: /usr/local/share/kolla/ansible/roles/mariadb/tasks/bootstrap_cluster.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1466798252.39-173892373523467 `" && echo ansible-tmp-1466798252.39-173892373523467="` echo $HOME/.ansible/tmp/ansible-tmp-1466798252.39-173892373523467 `" ) && sleep 0'
+<localhost> PUT /tmp/tmpt9YgyJ TO /root/.ansible/tmp/ansible-tmp-1466798252.39-173892373523467/kolla_docker
+<localhost> EXEC /bin/sh -c 'LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_MESSAGES=en_US.UTF-8 /usr/bin/python /root/.ansible/tmp/ansible-tmp-1466798252.39-173892373523467/kolla_docker; rm -rf "/root/.ansible/tmp/ansible-tmp-1466798252.39-173892373523467/" > /dev/null 2>&1 && sleep 0'
+Process WorkerProcess-60:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+ [ERROR]: User interrupted execution
+Command failed ansible-playbook -i /usr/local/share/kolla/ansible/inventory/all-in-one -e @/etc/kolla/globals.yml -e @/etc/kolla/passwords.yml -e CONFIG_DIR=/etc/kolla  -e action=deploy /usr/local/share/kolla/ansible/site.yml  --verbose --verbose --verbose

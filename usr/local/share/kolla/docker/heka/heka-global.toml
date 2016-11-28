@@ -1,0 +1,31 @@
+[hekad]
+# maxprocs = {{ ansible_processor_count * ansible_processor_cores }}
+maxprocs = 20
+
+[syslog_encoder]
+type = "SandboxEncoder"
+filename = "lua_encoders/os_syslog.lua"
+
+[syslog_log_decoder]
+type = "SandboxDecoder"
+filename = "lua_decoders/os_syslog.lua"
+  [syslog_log_decoder.config]
+  hostname = "localhost"
+
+[swift_log_decoder]
+type = "SandboxDecoder"
+filename = "lua_decoders/os_swift_log.lua"
+  [swift_log_decoder.config]
+  hostname = "localhost"
+
+[multi_log_decoder]
+type = "MultiDecoder"
+subs = ["syslog_log_decoder", "swift_log_decoder"]
+cascade_strategy = "first-wins"
+
+[syslog_input]
+type = "UdpInput"
+net = "unixgram"
+address = "/var/lib/kolla/heka/log"
+decoder = "multi_log_decoder"
+splitter = "NullSplitter"

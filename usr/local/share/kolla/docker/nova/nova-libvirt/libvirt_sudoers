@@ -1,0 +1,3 @@
+nova ALL = NOPASSWD:ALL
+kolla ALL = NOPASSWD:ALL
+

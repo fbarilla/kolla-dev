@@ -1,0 +1,49 @@
+FROM {{ namespace }}/{{ image_prefix }}base:{{ tag }}
+MAINTAINER {{ maintainer }}
+
+{% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
+
+RUN yum -y install \
+        ceph \
+        ceph-radosgw \
+        parted \
+        hdparm \
+        btrfs-progs \
+    && yum clean all
+
+{% elif base_distro in ['ubuntu', 'debian'] %}
+
+{% if base_distro_tag in ['ppc64'] %}
+
+RUN apt-get update
+
+{% endif %}
+
+RUN apt-get -y install --no-install-recommends \
+        ceph \
+        radosgw \
+        parted \
+        hdparm \
+        btrfs-tools \
+    && apt-get clean
+
+{% endif %}
+
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+RUN chmod 755 /usr/local/bin/kolla_extend_start
+
+
+{% if base_distro_tag in ['ppc64'] %}
+
+RUN getent group ceph || groupadd ceph \ 
+    && getent passwd ceph || useradd ceph \ 
+    && mkdir -p /home/ceph \
+    && chown -R ceph: /home/ceph
+
+{% else %}
+
+RUN useradd --user-group ceph \
+    && mkdir -p /home/ceph \
+    && chown -R ceph: /home/ceph
+
+{% endif %}

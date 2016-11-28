@@ -1,0 +1,3 @@
+%kolla ALL=(root) NOPASSWD: /bin/chown mysql\: /var/lib/mysql, /usr/bin/chown mysql\: /var/lib/mysql, /usr/local/bin/kolla_security_reset
+mysql ALL = NOPASSWD:ALL
+kolla ALL = NOPASSWD:ALL

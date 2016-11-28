@@ -1,0 +1,36 @@
+FROM {{ namespace }}/{{ image_prefix }}base:{{ tag }}
+MAINTAINER {{ maintainer }}
+
+RUN useradd -r -m --user-group kibana \
+    && usermod -a -G kolla kibana
+
+{% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
+
+RUN yum -y install \
+        kibana \
+    && yum clean all
+
+{% elif base_distro in ['ubuntu', 'debian'] %}
+
+{% if base_distro_tag in ['ppc64'] %} 
+	
+	RUN apt-get update \
+	&& apt-get install wget -y \
+&& wget http://cbs.centos.org/kojifiles/packages/kibana/3.1.2/2.el7/noarch/kibana-3.1.2-2.el7.noarch.rpm \
+	&& apt-get install alien dpkg-dev debhelper build-essential -y \
+	&& apt-get install apache2 -y \
+	&& alien kibana-3.1.2-2.el7.noarch.rpm \
+	&& dpkg -i kibana_3.1.2-3_all.deb 
+
+	{% else %}
+
+RUN apt-get -y install --no-install-recommends \
+        kibana \
+    && apt-get clean
+
+{% endif %}
+{% endif %}
+
+{{ include_footer }}
+
+USER kibana

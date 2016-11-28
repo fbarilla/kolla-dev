@@ -1,0 +1,58 @@
+FROM {{ namespace }}/{{ image_prefix }}base:{{ tag }}
+MAINTAINER {{ maintainer }}
+
+# from openstack-base
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends \
+        python-barbicanclient \
+        python-ceilometerclient \
+        python-congressclient \
+        python-designateclient \
+        python-heatclient \
+        python-ironicclient \
+        python-magnumclient \
+        python-manilaclient \
+        python-memcache \
+        python-mistralclient \
+        python-muranoclient \
+        python-pip \
+        python-saharaclient \
+        python-swiftclient \
+        python-troveclient \
+        python-zaqarclient \
+        python-openstackclient \
+        python-pymysql \
+        python-keystoneclient \
+        python-oslo.log \
+        openssl \
+        patch \
+    && apt-get clean
+
+# from neutron-base
+RUN apt-get -y install --no-install-recommends \
+        neutron-plugin-ml2 \
+        neutron-server \
+        openvswitch-switch \
+        neutron-lbaas-common \
+    && apt-get clean \
+    && mkdir -p /usr/share/neutron \
+    && ln -s /etc/neutron/api-paste.ini /usr/share/neutron/api-paste.ini
+
+# specific to this container 
+RUN apt-get -y install --no-install-recommends \
+        neutron-metadata-agent \
+    && apt-get clean
+# end 
+
+COPY neutron_sudoers /etc/sudoers.d/neutron_sudoers
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+
+RUN usermod -a -G kolla neutron \
+    && chmod 750 /etc/sudoers.d \
+    && chmod 440 /etc/sudoers.d/neutron_sudoers \
+    && touch /usr/local/bin/kolla_neutron_extend_start \
+    && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_neutron_extend_start
+
+{{ include_footer }}
+
+USER neutron

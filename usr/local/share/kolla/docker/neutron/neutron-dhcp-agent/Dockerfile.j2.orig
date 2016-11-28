@@ -1,0 +1,31 @@
+FROM {{ namespace }}/{{ image_prefix }}neutron-base:{{ tag }}
+MAINTAINER {{ maintainer }}
+
+{% if base_distro in ['ubuntu', 'debian'] %}
+    {% if install_type == 'binary' %}
+
+RUN apt-get -y install --no-install-recommends \
+        neutron-dhcp-agent \
+    && apt-get clean
+
+    {% endif %}
+
+{% if base_distro_tag in ['ppc64'] %}
+
+RUN rm /etc/neutron/api-paste.ini \
+    /etc/neutron/policy.json \
+    /etc/neutron/rootwrap.conf \
+    /etc/sudoers.d/neutron_sudoers
+
+RUN apt-get update \ 
+    && apt-get -y install --no-install-recommends \
+        neutron-dhcp-agent \
+    && apt-get clean
+
+{% endif %}
+
+{% endif %}
+
+{{ include_footer }}
+
+USER neutron

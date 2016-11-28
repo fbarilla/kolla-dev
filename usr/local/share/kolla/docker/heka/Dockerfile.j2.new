@@ -1,0 +1,80 @@
+FROM {{ namespace }}/{{ image_prefix }}base:{{ tag }}
+MAINTAINER {{ maintainer }}
+
+{% if base_distro in ['centos', 'fedora', 'oraclelinux', 'rhel'] %}
+
+RUN yum -y install \
+        https://github.com/mozilla-services/heka/releases/download/v0.10.0/heka-0_10_0-linux-amd64.rpm \
+    && yum clean all \
+    && useradd --user-group heka \
+    && mkdir /etc/heka
+
+{% elif base_distro in ['ubuntu', 'debian'] %}
+
+{% if base_distro_tag in ['ppc64'] %} 
+
+COPY socket.c /root/socket.c
+
+RUN apt-get update \ 
+    && apt-get install -y  gcc make cmake  \ 
+    && cd ~ \ 
+    && gcc -o socket socket.c \
+    && cp socket /usr/bin/socket \ 
+    && chmod 777 /usr/bin/socket \ 
+    && /bin/true
+
+{% else %}
+
+RUN curl --location https://github.com/mozilla-services/heka/releases/download/v0.10.0/heka_0.10.0_amd64.deb -o heka_0.10.0_amd64.deb \
+    && dpkg -i heka_0.10.0_amd64.deb \
+    && rm -f heka_0.10.0_amd64.deb
+
+{% endif %}
+{% endif %}
+
+{% if base_distro_tag in ['ppc64'] %} 
+
+RUN mkdir -p /var/lib/kolla/heka/
+RUN mkdir -p /var/lib/kolla/config_files
+RUN mkdir -p /usr/share/heka 
+RUN mkdir -p /etc/heka 
+
+COPY config.json  /var/lib/kolla/config_files
+COPY heka-global.toml  /var/lib/kolla/config_files
+COPY heka-horizon.toml  /var/lib/kolla/config_files
+COPY heka-keystone.toml  /var/lib/kolla/config_files
+COPY heka-mariadb.toml  /var/lib/kolla/config_files
+COPY heka-openstack.toml  /var/lib/kolla/config_files
+COPY heka-rabbitmq.toml  /var/lib/kolla/config_files
+COPY heka-global.toml  /etc/heka 
+COPY heka-horizon.toml  /etc/heka 
+COPY heka-keystone.toml  /etc/heka 
+COPY heka-mariadb.toml  /etc/heka 
+COPY heka-openstack.toml  /etc/heka 
+COPY heka-rabbitmq.toml /etc/heka 
+
+COPY plugins/modules /usr/share/heka/lua_modules/ 
+COPY plugins/decoders /usr/share/heka/lua_decoders/ 
+COPY plugins/encoders /usr/share/heka/lua_encoders/ 
+
+COPY heka_sudoers /etc/sudoers.d/heka_sudoers 
+COPY extend_start.sh /usr/local/bin/kolla_extend_start 
+
+{% else %} 
+
+COPY plugins/modules /usr/share/heka/lua_modules/
+COPY plugins/decoders /usr/share/heka/lua_decoders/
+COPY plugins/encoders /usr/share/heka/lua_encoders/
+
+COPY heka_sudoers /etc/sudoers.d/heka_sudoers
+COPY extend_start.sh /usr/local/bin/kolla_extend_start
+
+RUN usermod -a -G kolla heka \
+    && chmod 440 /etc/sudoers.d/heka_sudoers \
+    && chmod 755 /usr/local/bin/kolla_extend_start \
+    && chown -R heka: /usr/share/heka /etc/heka
+
+{% endif %} 
+
+{{ include_footer }}
+

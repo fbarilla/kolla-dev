@@ -1,0 +1,155 @@
+{
+    "command": "/bin/bash",
+    "config_files": [
+        {
+            "source": "/var/lib/kolla/config_files/heka-elasticsearch.toml",
+            "dest": "/etc/heka/heka-elasticsearch.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-global.toml",
+            "dest": "/etc/heka/heka-global.toml",
+            "owner": "heka",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-haproxy.toml",
+            "dest": "/etc/heka/heka-haproxy.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-keepalived.toml",
+            "dest": "/etc/heka/heka-keepalived.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-rabbitmq.toml",
+            "dest": "/etc/heka/heka-rabbitmq.toml",
+            "owner": "heka",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-openstack.toml",
+            "dest": "/etc/heka/heka-openstack.toml",
+            "owner": "heka",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-mariadb.toml",
+            "dest": "/etc/heka/heka-mariadb.toml",
+            "owner": "heka",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-keystone.toml",
+            "dest": "/etc/heka/heka-keystone.toml",
+            "owner": "heka",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-horizon.toml",
+            "dest": "/etc/heka/heka-horizon.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": false
+        },
+        {
+            "source": "/var/lib/kolla/config_files/heka-swift-account-auditor.toml",
+            "dest": "/etc/heka/heka-swift-account-auditor.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-account-reaper.toml",
+            "dest": "/etc/heka/heka-swift-account-reaper.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-account-replicator.toml",
+            "dest": "/etc/heka/heka-swift-account-replicator.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-account-server.toml",
+            "dest": "/etc/heka/heka-swift-account-server.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-container-auditor.toml",
+            "dest": "/etc/heka/heka-swift-container-auditor.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-container-replicator.toml",
+            "dest": "/etc/heka/heka-swift-container-replicator.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-container-server.toml",
+            "dest": "/etc/heka/heka-swift-container-server.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-container-updater.toml",
+            "dest": "/etc/heka/heka-swift-container-updater.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-object-auditor.toml",
+            "dest": "/etc/heka/heka-swift-object-auditor.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-object-expirer.toml",
+            "dest": "/etc/heka/heka-swift-object-expirer.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-object-replicator.toml",
+            "dest": "/etc/heka/heka-swift-object-replicator.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-object-server.toml",
+            "dest": "/etc/heka/heka-swift-object-server.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-object-updater.toml",
+            "dest": "/etc/heka/heka-swift-object-updater.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-proxy-server.toml",
+            "dest": "/etc/heka/heka-swift-proxy-server.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        },        {
+            "source": "/var/lib/kolla/config_files/heka-swift-rsyncd.toml",
+            "dest": "/etc/heka/heka-swift-rsyncd.toml",
+            "owner": "heka",
+            "perm": "0600",
+            "optional": true
+        }
+    ]
+}
+
